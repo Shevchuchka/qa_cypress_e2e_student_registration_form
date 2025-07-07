@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+// import generateUser from "./generateUser"
+
+// Cypress.Commands.add('getData', () => {
+//   return generateUser();
+// })
