@@ -1,4 +1,4 @@
-import { faker } from "@faker-js/faker";
+import { faker } from '@faker-js/faker';
 
 export default function generateUser() {
   const gender = faker.helpers.arrayElement(['Male', 'Female', 'Other']);
@@ -6,15 +6,15 @@ export default function generateUser() {
   const [firstName, lastName] = fullName.split(' ');
   const userName = firstName.toLowerCase() + lastName;
   const email = `${userName}@gmail.com`;
-  const phone = faker.phone.number().splice('-').join('');
-  const birthDate = faker.date.birthdate();
+  const phone = faker.phone.number({ style: 'international' }).slice(2);
+  const birthDate = faker.date.birthdate().toISOString().split('T')[0];
   const subjects = faker.helpers
     .arrayElements(
-      ['Math', 'English', 'History', 'Biology', 'Physics', 'Geography', 'Art'],
-      { min: 1, max: 3 }
+      ['Maths', 'English', 'History', 'Biology', 'Physics', 'Arts'],
+      { min: 1, max: 2 }
     );
-  const hobbies = faker.helpers
-    .arrayElements(['Sports', 'Reading', 'Music']);
+  const hobby = faker.helpers
+    .arrayElements(['Sports', 'Reading', 'Music'], 1);
 
   const address = faker.location.streetAddress(false);
 
@@ -26,8 +26,7 @@ export default function generateUser() {
     phone,
     birthDate,
     subjects,
-    hobbies,
+    hobby,
     address
   };
 };
-
