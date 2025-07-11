@@ -12,8 +12,8 @@ function getRandomInt(max) {
 }
 
 export default function stateAndCity() {
-  const stateIndex = getRandomInt(states.length - 1);
-  const cityIndex = getRandomInt(cities[states[stateIndex]].length - 1);
+  const stateIndex = getRandomInt(states.length) - 1;
+  const cityIndex = getRandomInt(cities[states[stateIndex]].length) - 1;
 
   const state = states[stateIndex];
   const city = cities[states[stateIndex]][cityIndex];
