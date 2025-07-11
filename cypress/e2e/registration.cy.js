@@ -1,4 +1,4 @@
-import tableResults from '../support/assertTableData';
+import tableResults from '../support/tableResults';
 import generateUser from '../support/generateUser';
 import stateAndCity from '../support/stateAndCity';
 
